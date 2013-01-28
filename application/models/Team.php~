@@ -1,0 +1,27 @@
+<?php  
+class Team extends Model {  
+  function Team() {  
+    parent::Model();  
+  }  
+
+  function insert_to_db() {
+
+    //We create a variable that will store our data.
+    $data = array(
+      'username' => $this->input->post('name'),
+      'password' => md5($this->input->post('email')),
+      'email' => $this->input->post('design'),
+     // 'date_joined' => time()
+    );
+ 
+//Built in function performs the insert action.
+    $this->db->insert('user', $data);
+
+  
+   // $sql = "INSERT INTO team (name, email, design) VALUES(".$this->db->escape($name).", ".$this->db->escape($email).", ".$this->db->escape($design).")";
+   // $this->db->query($sql);
+
+   // echo $this->db->affected_rows();
+
+  }
+}  

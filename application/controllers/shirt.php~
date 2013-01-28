@@ -1,0 +1,97 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Shirt extends CI_Controller {
+
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -  
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in 
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 */
+	public function index()
+	{
+		$this->load->view('layout/column1');
+	}
+
+	public function buy()
+	{
+		$this->load->model('Products_model');
+		//$product = $this->Products_model->get_all();
+		$result = $this->Products_model->get($this->uri->segment(3));
+		echo $result[0]['price'];
+		$data['view_left'] = 'shirt_buy_left';
+		$data['result'] = $result;
+		$data['view_right'] = 'shirt_buy_right';
+		
+		$this->load->view('layout/column5050', $data);
+		$name= $this->input->post('custname');
+		echo $name;
+		$chen = $this->input->post('myselect');
+		echo $chen;
+		$chosen3= $this->input->get('number');
+		$chosen2 = $this->input->post('nickname');
+		$chosen1 = $this->input->post('optionsRadios');
+		echo $chosen1;
+		$data = array(
+		  'id' => $this->uri->segment(3),
+		  'name' => $result[0]['product_name'],
+		  'qty' => 1,
+		  'price' => $result[0]['price'],
+		  
+		  
+		);
+
+/*
+		$data2 = array(
+		  'id' => $this->uri->segment(3),
+		  'name' =>$name,
+		  'qty' => 1,
+		  'price' => 29.99,
+		  'Size' => 'M',
+		  'Type' => 'Regular',
+		  'nickname' => 'Piggy',
+		  'number' => 12
+		);
+*/
+	
+		$this->cart->insert($data);
+		
+		echo "add() called" ;
+		
+	}
+
+	public function show()
+	{
+	  $cart = $this->cart->contents();
+	  echo '<pre>';
+	  print_r($cart);
+	}
+
+
+	function remove($rowid)
+	{
+
+	   $this->cart->update(array(
+	      'rowid' = $rowid;
+	      'qty'= 0;
+	 ));   
+		
+	}
+
+	function destroy() {
+
+	  $this->cart->destroy();
+
+	}
+
+}
+/* Location: ./application/controllers/welcome.php */

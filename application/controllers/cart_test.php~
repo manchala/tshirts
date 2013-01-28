@@ -1,0 +1,35 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+
+class Cart_test extends CI_Controller {
+
+function add(){
+
+  $data = array(
+      'id' => '42',
+      'name' => 'Pants',
+      'qty => 1,
+      'price' => 19.99,
+      'options' => array ('Size' => 'medium')
+
+  );
+
+  $this->cart->insert($data);
+  echo "add() called";
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+}

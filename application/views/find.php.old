@@ -1,0 +1,56 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Team Name</th>
+			<th>Shirt Design</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Snitches Get Stitches</td>
+			<td>
+				<img src="http://placekitten.com/200/200" class="img-polaroid"/>
+			</td>
+			<td>
+				<a href="<?php echo base_url(); ?>shirt/buy/id_number" class="btn" type="button" >Grab Shirt</a>
+			</td>
+		</tr>
+		<tr>
+			<td>Jello's Jigglin</td>
+			<td>
+				<img src="http://placekitten.com/200/200" class="img-polaroid"/>
+			</td>
+			<td>
+				<a href="<?php echo base_url(); ?>shirt/buy/id_number" class="btn" type="button">Grab Shirt</a>
+			</td>
+		</tr>
+		<tr>
+			<td>Dropkick Murphy's</td>
+			<td>
+				<img src="http://placekitten.com/200/200" class="img-polaroid"/>
+			</td>
+			<td>
+				<a href="<?php echo base_url(); ?>shirt/buy/id_number" class="btn" type="button">Grab Shirt</a>
+			</td>
+		</tr>
+		<tr>
+			<td>Winner Winner, Chicken Dinner</td>
+			<td>
+				<img src="http://placekitten.com/200/200" class="img-polaroid"/>
+			</td>
+			<td>
+				<a href="<?php echo base_url(); ?>shirt/buy/id_number" class="btn" type="button">Grab Shirt</a>
+			</td>
+		</tr>
+		<tr>
+			<td>Knights Who Say Ni!</td>
+			<td>
+				<img src="http://placekitten.com/200/200" class="img-polaroid"/>
+			</td>
+			<td>
+				<a href="<?php echo base_url(); ?>shirt/buy/id_number" class="btn" type="button">Grab Shirt</a>
+			</td>
+		</tr>
+	</tbody>
+</table>

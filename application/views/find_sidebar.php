@@ -1,0 +1,6 @@
+<form action="/team/search" method="post">
+<div class="form-search">
+  <input type="text" class="input-medium search-query" name="TeamName">
+  <button type="submit" class="btn">Search</button>
+</div>
+</form>
